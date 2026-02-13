@@ -1,0 +1,33 @@
+[package]
+name = "keypress"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+crossterm = "0.29"
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3", features = ["consoleapi", "wincon", "processenv", "synchapi", "handleapi", "minwindef", "winuser", "winbase"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+evdev = "0.13.2"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+core-foundation = "0.10.1"
+core-graphics = "0.25"
+block = "0.1"
+
+[lints.rust]
+unused = "allow"
+dead_code = "allow"
+unused_imports = "allow"
+unused_variables = "allow"
+unused_assignments = "allow"
+unused_mut = "allow"
+unreachable_patterns = "allow"
+non_snake_case = "allow"
+non_upper_case_globals = "allow"
+warnings = "allow"
+
+[lints.clippy]
+all = "allow"
