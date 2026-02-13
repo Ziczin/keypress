@@ -11,10 +11,10 @@ Cross-platform library for waiting for a physical key press with modifier detect
 ## Usage
 
 ```rust
-use keypress::{wait_key_with_mods, Key};
+use keypress::{get_key, Key};
 
 fn main() -> std::io::Result<()> {
-    let event = wait_key_with_mods("Press a key: ")?;
+    let event = get_key("Press a key: ")?;
     println!("Key: {:?}", event.key);
     Ok(())
 }

@@ -1,8 +1,8 @@
-use keypress::{wait_key_with_mods, Key};
+use keypress::{get_key, Key};
 
 fn main() -> std::io::Result<()> {
     loop {
-        let event = wait_key_with_mods("Press any key (ESC to exit): ")?;
+        let event = get_key("Press any key (ESC to exit): ")?;
         println!(
             "Key: {:?}, Shift: {}, Ctrl: {}, Alt: {}",
             event.key, event.shift, event.ctrl, event.alt

@@ -32,7 +32,7 @@ pub struct KeyEvent {
     pub alt: bool,
 }
 
-pub fn wait_key_with_mods(prompt: &str) -> io::Result<KeyEvent> {
+pub fn get_key(prompt: &str) -> io::Result<KeyEvent> {
     eprint!("{}", prompt);
     io::stderr().flush()?;
     platform::wait_key_with_mods()
